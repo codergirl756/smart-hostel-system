@@ -14,7 +14,10 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3001', 'https://your-frontend-domain.com'],
+  credentials: true
+}));
 app.use(morgan('dev'));
 app.use(express.json());
 
