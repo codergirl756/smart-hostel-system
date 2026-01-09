@@ -21,7 +21,7 @@ const AddRoom = () => {
     e.preventDefault();
     setMessage('');
     try {
-      await axios.post('/api/rooms/', {
+      await axios.post('https://smart-hostel-system-1.onrender.com/api/rooms/', {
         ...formData,
         capacity: parseInt(formData.capacity, 10),
       });
