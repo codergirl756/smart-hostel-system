@@ -29,6 +29,8 @@ A full-stack MERN application to efficiently manage and allocate hostel rooms ba
 - Node.js v18+
 - npm
 - MongoDB (running locally or MongoDB Atlas account)
+- project will run on https//localhost:3000
+- 
 
 ### Backend Setup
 1. Open terminal in project folder
