@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import API from '../services/api';
 import axios from 'axios';
 const ViewRooms = () => {
   const [rooms, setRooms] = useState([]);
@@ -8,7 +7,7 @@ const ViewRooms = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const res = await axios.get('https://smart-hostel-system.onrender.com/rooms');
+        const res = await axios.get('https://smart-hostel-system.onrender.com/api/rooms');
         setRooms(res.data);
       } catch (err) {
         console.error(err);
