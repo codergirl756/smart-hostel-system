@@ -7,7 +7,7 @@ const ViewRooms = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const res = await axios.get('/api/rooms/');
+        const res = await axios.get('https://smart-hostel-system-1.onrender.com/api/rooms/');
         setRooms(res.data);
       } catch (err) {
         console.error(err);
