@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import API from '../services/api';
 import axios from 'axios';
 const AddRoom = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +21,7 @@ const AddRoom = () => {
     e.preventDefault();
     setMessage('');
     try {
-      await axios.post('https://smart-hostel-system.onrender.com/rooms', {
+      await axios.post('https://smart-hostel-system.onrender.com/api/rooms', {
         ...formData,
         capacity: parseInt(formData.capacity, 10),
       });
