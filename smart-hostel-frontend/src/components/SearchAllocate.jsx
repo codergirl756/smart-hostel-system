@@ -30,7 +30,7 @@ const SearchAllocate = () => {
       if (searchParams.needsAC !== '') params.needsAC = searchParams.needsAC;
       if (searchParams.needsWashroom !== '') params.needsWashroom = searchParams.needsWashroom;
 
-      const res = await axios.get('https://smart-hostel-system.onrender.com/api/rooms/search', { params });
+      const res = await axios.get('/api/rooms/search', { params });
       setSearchResults(res.data);
       if (res.data.length === 0) setSearchMsg('No rooms match your criteria.');
     } catch (err) {
