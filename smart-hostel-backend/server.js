@@ -16,6 +16,7 @@ connectDB();
 app.use(helmet());
 app.use(cors({
   origin: ['https://smart-hostel-system-2.onrender.com'],
+  methods: ['GET','POST','DELETE','PUT'],
   credentials: true
 }));
 app.use(morgan('dev'));
