@@ -49,7 +49,7 @@ const SearchAllocate = () => {
         needsAC: allocParams.needsAC,
         needsWashroom: allocParams.needsWashroom,
       };
-      const res = await axios.post('https://smart-hostel-system.onrender.com/api/rooms/allocate', payload);
+      const res = await axios.post('/api/rooms/allocate', payload);
       setAllocatedRoom(res.data);
     } catch (err) {
       if (err.response?.status === 404) {
