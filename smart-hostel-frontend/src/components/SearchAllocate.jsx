@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import API from '../services/api';
-
+import axios from 'axios';
 const SearchAllocate = () => {
   // Search state
   const [searchParams, setSearchParams] = useState({
@@ -31,7 +31,7 @@ const SearchAllocate = () => {
       if (searchParams.needsAC !== '') params.needsAC = searchParams.needsAC;
       if (searchParams.needsWashroom !== '') params.needsWashroom = searchParams.needsWashroom;
 
-      const res = await API.get('/rooms/search', { params });
+      const res = await axios.get('https://smart-hostel-system.onrender.com/rooms/search', { params });
       setSearchResults(res.data);
       if (res.data.length === 0) setSearchMsg('No rooms match your criteria.');
     } catch (err) {
@@ -50,7 +50,7 @@ const SearchAllocate = () => {
         needsAC: allocParams.needsAC,
         needsWashroom: allocParams.needsWashroom,
       };
-      const res = await API.post('/rooms/allocate', payload);
+      const res = await axios.post('https://smart-hostel-system.onrender.com/rooms/allocate', payload);
       setAllocatedRoom(res.data);
     } catch (err) {
       if (err.response?.status === 404) {
